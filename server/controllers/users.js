@@ -10,7 +10,7 @@ export const getUser = async(req, res) => {
     } catch (err) {
         res.status(404).json({ message: err.message });
     }
-}
+};
 
 export const getUserFriends = async (req, res) => {
     try {
@@ -50,7 +50,7 @@ export const addRemoveFriend = async (req, res) => {
         await friend.save();
 
         const friends = await Promise.all(
-            user.friend.map((id) => User.findById(id))
+            user.friends.map((id) => User.findById(id))
         );
         const formattedFriends = friends.map(
             ({ _id, firstName, lastName, occupation, location, picturPath}) => {

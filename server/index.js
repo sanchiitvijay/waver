@@ -57,10 +57,7 @@ app.use("/posts", postRoutes);
 
 // mongoose connect
 const PORT = process.env.PORT || 6001;
-mongoose.connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-}).then(() => {
+mongoose.connect(process.env.MONGO_URL).then(() => {
     app.listen(PORT, () =>console.log(`Server port: ${PORT}`));
 
     // // added fake data for once

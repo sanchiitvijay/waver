@@ -6,7 +6,7 @@ import {
   } from "@mui/icons-material";
   import { Box, Typography, Divider, useTheme } from "@mui/material";
   import UserImage from "../../components/UserImage";
-  import FlexBetween from "../../components/flexBetween";
+  import FlexBetween from "../../components/FlexBetween";
   import WidgetWrapper from "../../components/WidgetWrapper";
   import { useSelector } from "react-redux";
   import { useEffect, useState } from "react";
@@ -97,7 +97,7 @@ import {
         {/* THIRD ROW */}
         <Box p="1rem 0">
           <FlexBetween mb="0.5rem">
-            <Typography color={medium}>Who's viewed your profile</Typography>
+            <Typography color={medium}> Who s viewed your profile</Typography>
             <Typography color={main} fontWeight="500">
               {viewedProfile}
             </Typography>
