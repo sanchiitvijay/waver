@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
 import HomePage from './scenes/homePage/homePage';
 import LoginPage from './scenes/loginPage/loginPage';
@@ -15,7 +14,7 @@ function App() {
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   const isAuth = Boolean(useSelector((state) => state.token));
   return (
-    <div classNameName='app'>
+    <div className='app'>
       <BrowserRouter>
       <ThemeProvider theme={theme}>
           <CssBaseline/>

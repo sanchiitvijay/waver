@@ -11,6 +11,8 @@ import {
   import { useSelector } from "react-redux";
   import { useEffect, useState } from "react";
   import { useNavigate } from "react-router-dom";
+  import { FaTwitter, FaLinkedin } from "react-icons/fa";
+
   
   const UserWidget = ({ userId, picturePath }) => {
     const [user, setUser] = useState(null);
@@ -120,7 +122,7 @@ import {
   
           <FlexBetween gap="1rem" mb="0.5rem">
             <FlexBetween gap="1rem">
-              <img src="../assets/twitter.png" alt="twitter" />
+              <FaTwitter/>
               <Box>
                 <Typography color={main} fontWeight="500">
                   Twitter
@@ -133,7 +135,7 @@ import {
   
           <FlexBetween gap="1rem">
             <FlexBetween gap="1rem">
-              <img src="../assets/linkedin.png" alt="linkedin" />
+              <FaLinkedin/>
               <Box>
                 <Typography color={main} fontWeight="500">
                   Linkedin
