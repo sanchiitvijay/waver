@@ -1,6 +1,7 @@
 import bcrypt from 'bcrypt';
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
+import { uploadCloudinary }  from "../utils/Cloudinary.js"
 
 // register user
 
@@ -11,11 +12,13 @@ export const register = async(req, res) => {
             lastName,
             email,
             password,
-            picturePath,
             friends,
             location,
             occupation
         } = req.body;
+
+        const picturePathLocation = req.files?.picturePath[0]?.path;
+        const picture = await uploadCloudinary(picturePathLocation);
 
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt);
@@ -25,7 +28,7 @@ export const register = async(req, res) => {
             lastName,
             email,
             password: passwordHash,
-            picturePath,
+            picturePath: picture,
             friends,
             location,
             occupation,
